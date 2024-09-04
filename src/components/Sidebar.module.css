@@ -1,0 +1,84 @@
+.mysidebar {
+  background-color: black;
+  height: 97vh;
+  border-radius: 190px;
+  margin: 1vh 1vw;
+  
+
+}
+
+.head {
+  font-family: cursive;
+}
+
+.sidebarBtn {
+  background-color: #40c9ff;
+  color: black;
+  padding: 1.2vw;
+  margin: 1.2vw 0vw;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.ulList {
+  list-style: none;
+  padding: 1vw;
+  height: 44vh;
+}
+
+.lists {
+  margin: 3vw 0vw 2vw 0vw;
+}
+
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+  padding: 2vw 0vw 2vw 0vw;
+}
+
+.tab {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.1vw;
+  font-weight: bold;
+  border-radius: 50px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .mysidebar {
+    width: 25vw;
+  }
+
+  .tabsContainer {
+    flex-direction: column;
+    padding: 0px;
+    height: auto;
+  }
+
+  .tab {
+    font-size: 10px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mysidebar {
+    width: 30vw;
+  }
+
+  .head {
+    margin-top: 10vh;
+  }
+  .lists {
+    margin: 2px 3px 20px 0px;
+  }
+
+  .tabsContainer {
+    padding: 0px;
+  }
+
+  .tab {
+    font-size: 1.2vw ;
+  }
+}

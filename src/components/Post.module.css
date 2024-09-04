@@ -1,0 +1,289 @@
+/* 
+ .post {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45vmin;
+ min-height: 50vmin;
+  margin: 5px auto;
+  padding: 5px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -11px;
+  width: 2.2vw;
+  height: 5vh;
+  background-color: #ff5a5f;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.badgeImage {
+  width: 30px;
+  height: 30px;
+}
+
+ 
+ .title {
+   margin-bottom: 5px;
+   font-size: 1vw;
+   color: #333;
+   text-align: center;
+ }
+ 
+ .image {
+ 
+   width: 100%;
+   height: auto;
+   
+   border-radius: 10px;
+   margin-bottom: 5px;
+   object-fit: cover;
+ }
+ 
+ .description {
+   font-size: .9vw;
+   color: #555;
+   font-weight: 600;
+   line-height: 1;
+   text-align: start;
+   margin-bottom: 1.4vh;
+ }
+ .likesContainer {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.likes {
+  
+  font-size: 14px;
+  color: #c4c4c4;
+  margin-top: 4px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.likeButton {
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5px;
+}
+
+.likeButton:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.8));
+}
+
+.tags{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+}
+ 
+ 
+ @media (max-width: 768px) {
+   .post {
+     padding: 15px;
+     max-width: 100%;
+     margin: 10px;
+   }
+
+
+ 
+   .title {
+     font-size: 2vw;
+   }
+ 
+   .description {
+     font-size: 15px;
+   }
+ 
+   .likes {
+     font-size: 16px;
+   }
+ }
+ 
+ @media (max-width: 480px) {
+   .post {
+     padding: 10px;
+     max-width: 100%;
+     margin: 5px;
+   }
+ 
+   .title {
+     font-size: 2vw;
+   }
+ 
+   .description {
+     font-size: 1vw;
+   }
+ 
+   .likes {
+     font-size: 1vw;
+   }
+ }
+
+  */
+
+  .post {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45vmin;
+    min-height: 50vmin;
+    margin: 5px auto;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .badge {
+    position: absolute;
+    top: -3%;
+    right: -4%;
+    width: 2.5vw; /* Adjust width */
+    height: 2.5vw; /* Adjust height */
+    background-color: #ff5a5f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ensure badge doesn't overflow */
+    max-width: 50px;
+    max-height: 50px;
+  }
+  
+  .badgeImage {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+  }
+  
+  .title {
+    margin-bottom: 5px;
+    font-size: 1vw;
+    color: #333;
+    text-align: center;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    object-fit: cover;
+  }
+  
+  .description {
+    font-size: .9vw;
+    color: #555;
+    font-weight: 600;
+    line-height: 1;
+    text-align: start;
+    margin-bottom: 1.4vh;
+  }
+  
+  .likesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .likes {
+    font-size: 14px;
+    color: #c4c4c4;
+    margin-top: 4px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .likeButton {
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5px;
+  }
+  
+  .likeButton:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.8));
+  }
+  
+  .tags {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .post {
+      padding: 15px;
+      max-width: 100%;
+      margin: 10px;
+    }
+  
+    .badge {
+      width: 5vw;
+      height: 5vw;
+      top: -4%;
+      right: -4%;
+    }
+  
+    .title {
+      font-size: 2vw;
+    }
+  
+    .description {
+      font-size: 15px;
+    }
+  
+    .likes {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .post {
+      padding: 10px;
+      max-width: 100%;
+      margin: 5px;
+    }
+  
+    .badge {
+      width: 7vw;
+      height: 7vw;
+      top: -3%;
+      right: -3%;
+    }
+  
+    .title {
+      font-size: 2vw;
+    }
+  
+    .description {
+      font-size: 1vw;
+    }
+  
+    .likes {
+      font-size: 1vw;
+    }
+  }
+  
