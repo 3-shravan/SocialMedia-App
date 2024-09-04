@@ -14,14 +14,15 @@ const Post = ({ post }) => {
         <RiChatDeleteFill />
       </div>
       <h2 className={styles.title}>{post.title}</h2>
-      <img src={post.image} alt="Post Image" className={styles.image} />
+      <img src={post.image} alt="" className={styles.image} />
       <div className={styles.likesContainer}>
         <p className={styles.likes}>
           <FcLike className={styles.likeButton} /> {""}
-          Reacted by {post.reactions} people
+          Reacted by {post.reactions.likes} people
         </p>
       </div>
-      <div className={styles.description}>{post.desc}</div>
+
+      <div className={styles.description}>{post.body}</div>
       <div className={styles.tags}>
         {post.tags.map((tag) => (
           <div key={tag} className={`badge text-bg-info`}>

@@ -1,17 +1,17 @@
 import React from "react";
-import styles from'./Header.module.css'
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header class={`p-2 text-bg ${styles.myheader}`}>
-      <div class="container  ">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
+    <header className={`p-2 text-bg ${styles.myheader}`}>
+      <div className="container  ">
+        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
           <a
             href="/"
-            class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+            className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
           >
             <svg
-              class="bi me-2"
+              className="bi me-2"
               width="40"
               height="32"
               role="img"
@@ -21,38 +21,50 @@ const Header = () => {
             </svg>
           </a>
 
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a href="#" class="nav-link px-2 text-secondary">
+              <a href="#" className="nav-link px-2 text-secondary">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link px-2 text-white">
+              <a href="#" className="nav-link px-2 text-white">
                 Features
               </a>
             </li>
-           
+
             <li>
-              <a href="#" class="nav-link px-2 text-white">
+              <a href="#" className="nav-link px-2 text-white">
                 About
               </a>
             </li>
           </ul>
 
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <form
+            className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
+            role="search"
+          >
             <input
               type="search"
-              class="form-control form-control-dark text-bg"
+              className="form-control form-control-dark text-bg"
               placeholder="Search..."
               aria-label="Search"
             />
           </form>
 
-          <div class="text-end">
-          
-          <button type="button" className={`${styles['login-btn']} ${styles['auth-btn']}`}>Login</button>
-        <button type="button" className={`${styles['signup-btn']} ${styles['auth-btn']}`}>Signup</button>
+          <div className="text-end">
+            <button
+              type="button"
+              className={`${styles["login-btn"]} ${styles["auth-btn"]}`}
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              className={`${styles["signup-btn"]} ${styles["auth-btn"]}`}
+            >
+              Signup
+            </button>
           </div>
         </div>
       </div>
