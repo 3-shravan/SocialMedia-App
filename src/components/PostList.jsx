@@ -6,26 +6,8 @@ import Welcome from "./Welcome";
 import Loading from "./Loading";
 
 const PostList = () => {
-  const { postList, initialPosts } = useContext(PostListData);
-  const [isFetching, setIsFetching] = useState(false);
-
-  useEffect(() => {
-    const controller=new AbortController();
-    const signal=controller.signal;
-
-    setIsFetching(true);
-    fetch("https://dummyjson.com/posts/search?q=love",{signal})
-      .then((res) => res.json())
-      .then((obj) => {
-        initialPosts(obj.posts);
-        setIsFetching(false);
-      })
-   
-
-      // return ()=>{  controller.abort();
-      //   console.log("aborted")
-      // };
-  }, []);
+  const { postList, isFetching } = useContext(PostListData);
+ 
 
   return (
     <div className={styles.gridContainer}>

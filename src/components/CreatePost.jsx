@@ -26,11 +26,30 @@ const CreatePost = () => {
     titleElement.current.value = "";
     descElement.current.value = "";
     likesElement.current.value = "";
-
     tagsElement.current.value = "";
     setImage(null);
 
-    addPost(title, desc, reactions, tags, imageUrl);
+
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: Math.ceil(Math.random() * 10),
+        title: title,
+        image: imageUrl,
+        body: desc,
+        reactions: {
+          likes: reactions.likes || 0,
+        },
+        tags: tags,
+      }),
+    })
+      .then((res) => res.json())
+      .then((postdata) => {
+        addPost(postdata);
+      });
+
+    // addPost(title, desc, reactions, tags, imageUrl);
   };
 
   return (
