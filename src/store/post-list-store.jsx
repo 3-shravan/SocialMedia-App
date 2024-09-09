@@ -9,6 +9,8 @@ export const PostList = createContext({
   addPost: () => {},
   deletePost: () => {},
   isFetching: false,
+  tab:"",
+  setTab:()=>{},
 });
 
 const PostListReducer = (currPostList, action) => {
@@ -29,6 +31,7 @@ const PostListReducer = (currPostList, action) => {
 
 const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(PostListReducer, []);
+  const [tab, setTab] = useState("Home");
 
   const [isFetching, setIsFetching] = useState(false);
 
@@ -40,7 +43,7 @@ const PostListProvider = ({ children }) => {
   };
  
   // title, desc, reactions, tags, imageUrl
-  const addPost = () => {
+  const addPost = (postdata) => {
     dispatchPostList({
       type: "ADD_POST",
       payload: postdata,
@@ -85,7 +88,7 @@ const PostListProvider = ({ children }) => {
   }, []);
 
   return (
-    <PostList.Provider value={{ postList, isFetching, addPost, deletePost }}>
+    <PostList.Provider value={{ postList, isFetching, addPost, deletePost,tab,setTab }}>
       {children}
     </PostList.Provider>
   );

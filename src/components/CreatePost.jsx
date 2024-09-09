@@ -1,9 +1,12 @@
 import React, { useContext, useRef, useState } from "react";
 import styles from "./CreatePost.module.css";
 import { PostList as PostListData } from "../store/post-list-store";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   const { addPost } = useContext(PostListData);
+  const {setTab}=useContext(PostListData);
+  const navigate=useNavigate();
 
   const [image, setImage] = useState(null);
   const titleElement = useRef();
@@ -47,7 +50,10 @@ const CreatePost = () => {
       .then((res) => res.json())
       .then((postdata) => {
         addPost(postdata);
+        navigate("/");
+        setTab("Home");
       });
+      
 
     // addPost(title, desc, reactions, tags, imageUrl);
   };

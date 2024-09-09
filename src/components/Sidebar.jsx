@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Sidebar.module.css";
 import profileImg from "../assets/image1.jpg";
+import { Link } from "react-router-dom";
+import {PostList} from "../store/post-list-store";
 
-export const Sidebar = ({ setTab, tab }) => {
+//{ setTab, tab }
+export const Sidebar = () => {
+
+  const {tab,setTab}=useContext(PostList)
+
   return (
     <div className={`d-flex flex-column flex-shrink-1 p-2 ${styles.mysidebar}`}>
       <a
@@ -36,8 +42,8 @@ export const Sidebar = ({ setTab, tab }) => {
       <div className={styles.tabsContainer}>
         <ul className={styles.ulList}>
           <li className={styles.lists}>
-            <a
-              href="#"
+            <Link
+              to="/"
               className={`${styles.tab} ${
                 tab === "Home" && styles.sidebarBtn
               } `}
@@ -45,18 +51,18 @@ export const Sidebar = ({ setTab, tab }) => {
               onClick={() => setTab("Home")}
             >
               Home
-            </a>
+            </Link>
           </li>
           <li className={styles.lists}>
-            <a
-              href="#"
+            <Link
+              to="/create-post"
               className={`${styles.tab} ${
                 tab === "Create Post" && styles.sidebarBtn
               } `}
               onClick={() => setTab("Create Post")}
             >
               Create Post
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

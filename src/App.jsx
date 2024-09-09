@@ -7,19 +7,23 @@ import { useState } from "react";
 import CreatePost from "./components/CreatePost";
 import PostList from "./components/PostList";
 import PostListProvider from "./store/post-list-store";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const [tab, setTab] = useState("Home");
+  // const [tab, setTab] = useState("Home");
 
   return (
     <PostListProvider>
       <div className="app-container">
         <div className="sidebar-container">
-          <Sidebar setTab={setTab} tab={tab}></Sidebar>
+          <Sidebar
+          //  setTab={setTab} tab={tab}
+           ></Sidebar>
         </div>
         <div className="header-footer-container">
           <Header></Header>
-          {tab === "Home" ? <PostList /> : <CreatePost></CreatePost>}
+          {/* {tab === "Home" ? <PostList /> : <CreatePost></CreatePost>} */}
+          <Outlet />
 
           <Footer></Footer>
         </div>
