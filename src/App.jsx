@@ -1,35 +1,52 @@
 import "./App.css";
-import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
-import { useState } from "react";
-import CreatePost from "./components/CreatePost";
-import PostList from "./components/PostList";
-import PostListProvider from "./store/post-list-store";
-import { Outlet } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
+import CreatePost from "./components/CreatePost.jsx";
+import PostList from "./components/PostList.jsx";
+import Register from "./Auth/Register.jsx";
+import Login from "./Auth/Login.jsx";
+import LandingPage from "./pages/LandingPage.jsx";
+import Home from "./pages/Home.jsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
+    children: [
+      { path: "/home", element: <PostList /> },
+      { path: "/home/create-post", element: <CreatePost /> },
+    ],
+  },
+]);
 
 function App() {
-  // const [tab, setTab] = useState("Home");
-
-  return (
-    <PostListProvider>
-      <div className="app-container">
-        <div className="sidebar-container">
-          <Sidebar
-          //  setTab={setTab} tab={tab}
-           ></Sidebar>
-        </div>
-        <div className="header-footer-container">
-          <Header></Header>
-          {/* {tab === "Home" ? <PostList /> : <CreatePost></CreatePost>} */}
-          <Outlet />
-
-          <Footer></Footer>
-        </div>
-      </div>
-    </PostListProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
+
+
+// {
+//   path: "/home",
+//   element: (
+//     <ProtectedRoute>
+//       <Home />
+//     </ProtectedRoute>
+//   ), // Home and its children are now protected
+//   children: [
+//     { path: "/home", element: <PostList /> },
+//     { path: "/home/create-post", element: <CreatePost /> },
+//   ],
+// },

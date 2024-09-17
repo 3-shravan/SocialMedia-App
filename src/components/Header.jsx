@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./Header.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate=useNavigate();
   return (
     <header className={`p-2 text-bg ${styles.myheader}`}>
       <div className="container  ">
@@ -56,12 +58,14 @@ const Header = () => {
             <button
               type="button"
               className={`${styles["login-btn"]} ${styles["auth-btn"]}`}
+              onClick={()=> navigate("/login")}
             >
               Login
             </button>
             <button
               type="button"
               className={`${styles["signup-btn"]} ${styles["auth-btn"]}`}
+              onClick={()=> navigate("/register")}
             >
               Signup
             </button>

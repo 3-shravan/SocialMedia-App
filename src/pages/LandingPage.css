@@ -1,0 +1,138 @@
+/* General Styling */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ body {
+   font-family: 'Poppins', sans-serif;
+   background-color: #fff;
+   color: #000;
+ }
+ 
+ /* Navbar */
+ .navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 60px;
+   background-color: #000;
+ }
+ 
+ .logo {
+   font-size: 28px;
+   color: #fff;
+   font-weight: bold;
+ }
+ 
+ .nav-links {
+   display: flex;
+   gap: 30px;
+ }
+ 
+ .nav-links a {
+   text-decoration: none;
+   color: #fff;
+   font-size: 16px;
+   transition: color 0.3s ease;
+ }
+ 
+ .nav-links a:hover {
+   color: #d4af37;
+ }
+ 
+ .auth-buttons .btn {
+   margin-left: 20px;
+   padding: 10px 20px;
+   font-size: 16px;
+   border-radius: 20px;
+   border: 2px solid #fff;
+   background-color: transparent;
+   color: #fff;
+   cursor: pointer;
+   transition: background-color 0.3s ease, color 0.3s ease;
+ }
+ 
+ .auth-buttons .login:hover {
+   background-color: #fff;
+   color: #000;
+ }
+ 
+ .auth-buttons .signup:hover {
+   background-color: #d4af37;
+   color: #000;
+   border-color: #d4af37;
+ }
+ 
+ /* Hero Section */
+ .hero {
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #f8f8f8;
+ }
+ 
+ .hero-content {
+   text-align: center;
+ }
+ 
+ .hero-title {
+   font-size: 48px;
+   color: #000;
+   margin-bottom: 20px;
+   animation: fadeInDown 1s ease-in-out;
+ }
+ 
+ .hero-title span {
+   color: #d4af37;
+ }
+ 
+ .hero-description {
+   font-size: 18px;
+   color: #666;
+   margin-bottom: 40px;
+ }
+ 
+ .hero-buttons .btn {
+   margin: 10px;
+   padding: 12px 30px;
+   border: 2px solid #000;
+   background-color: #000;
+   color: #fff;
+   border-radius: 30px;
+   font-size: 18px;
+   transition: background-color 0.3s ease, color 0.3s ease;
+   cursor: pointer;
+ }
+ 
+ .hero-buttons .primary-btn:hover {
+   background-color: #fff;
+   color: #000;
+ }
+ 
+ .hero-buttons .secondary-btn {
+   background-color: #d4af37;
+   border-color: #d4af37;
+   color: #000;
+ }
+ 
+ .hero-buttons .secondary-btn:hover {
+   background-color: #fff;
+   border-color: #000;
+   color: #000;
+ }
+ 
+ /* Animations */
+ @keyframes fadeInDown {
+   from {
+     opacity: 0;
+     transform: translateY(-20px);
+   }
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+ 

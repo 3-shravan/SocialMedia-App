@@ -1,8 +1,6 @@
 import React, { createContext, useReducer, useState, useEffect } from "react";
-// import img from "../assets/img3.png";
-// import shravanImg from "../assets/img4.jpg";
+import { ToastContainer, toast } from 'react-toastify';
 
-// import myImg from "../assets/img5.jpg";
 
 export const PostList = createContext({
   postList: [],
@@ -90,6 +88,7 @@ const PostListProvider = ({ children }) => {
   return (
     <PostList.Provider value={{ postList, isFetching, addPost, deletePost,tab,setTab }}>
       {children}
+      <ToastContainer/>
     </PostList.Provider>
   );
 };

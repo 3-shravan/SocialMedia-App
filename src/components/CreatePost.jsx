@@ -50,7 +50,7 @@ const CreatePost = () => {
       .then((res) => res.json())
       .then((postdata) => {
         addPost(postdata);
-        navigate("/");
+        navigate("/home");
         setTab("Home");
       });
       
